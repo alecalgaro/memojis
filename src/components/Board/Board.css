@@ -1,0 +1,40 @@
+.board {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 10px;
+	max-width: 600px;
+	margin: 10px auto;
+
+	width: 90%;
+}
+
+@media (min-width: 576px) {
+	.board {
+		width: 100%;
+	}
+}
+
+.containerBoard {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	animation: board_fadeIn 1s;
+}
+
+@keyframes board_fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.countFailures {
+	margin: 20px 0 40px 0;
+	font-size: 18px;
+}

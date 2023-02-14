@@ -1,0 +1,50 @@
+.memo-block {
+	cursor: pointer;
+	aspect-ratio: 1 / 1; /* igual ancho y alto */
+}
+
+.memo-block-front,
+.memo-block-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	border-radius: 4px;
+	transition: 0.3s all;
+}
+
+.memo-block-front:hover {
+	transform: scale(1.03);
+}
+
+/* cuando se da vuelta el bloque */
+.memo-block-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transition: transform 0.6s;
+	transform-style: preserve-3d; /* giro como si fuera en 3D */
+}
+
+/* clase que se agrega al presionar sobre un bloque para realizar el giro */
+.memo-block-flipped {
+	transform: rotateY(180deg);
+}
+
+/* parte de atras del bloque donde va la imagen para cuando el bloque esta girado */
+.memo-block-back {
+	background-color: var(--red);
+	transform: rotateY(180deg);
+	box-shadow: 5px 5px 10px 0px rgb(0 0 0 / 50%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 55px;
+}
+
+/* parte del frente para el bloque sin girar */
+.memo-block-front {
+	background-color: var(--blue);
+}
